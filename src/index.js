@@ -22,12 +22,12 @@ const btnReset = document.getElementById("reset-button");
 
 const updateResults = (e) => {
   const text = e.target.value;
-  liCharacters.innerText = `Caracteres ${getCharacterCount(text)}`;
-  liCharactersNoSpaces.innerText = `Caracteres sin espacios ${getCharacterCountExcludingSpaces(text)}`;
-  liWords.innerText = `Palabras ${getWordCount(text)}`;
-  liNumbers.innerText = `Números ${getNumberCount(text)}`;
-  liSumNumbers.innerText = `Suma números ${getNumberSum(text)}`;
-  liAverageLength.innerText = `Promedio longitud ${getAverageWordLength(text)}`;
+  liCharacters.textContent = `Caracteres ${getCharacterCount(text)}`;
+  liCharactersNoSpaces.textContent = `Caracteres sin espacios ${getCharacterCountExcludingSpaces(text)}`;
+  liWords.textContent = `Palabras ${getWordCount(text)}`;
+  liNumbers.textContent = `Números ${getNumberCount(text)}`;
+  liSumNumbers.textContent = `Suma números ${getNumberSum(text)}`;
+  liAverageLength.textContent = `Promedio longitud ${getAverageWordLength(text)}`;
 };
 
 const resetTextArea = () => {

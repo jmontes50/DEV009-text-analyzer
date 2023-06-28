@@ -38,7 +38,7 @@ const analyzer = {
     const arrNumbers = [];
     // let arrNumbers = "";
     for (let i = 0; i < words.length; i++) {
-      const isNumber = words[i] * 1;
+      const isNumber = parseFloat(words[i]);
       if (!isNaN(isNumber)) {
         arrNumbers.push(words[i]);
         // arrNumbers += words[i];
@@ -63,7 +63,7 @@ const analyzer = {
     let sum = 0;
 
     for (let i = 0; i < words.length; i++) {
-      const isNumber = words[i] * 1;
+      const isNumber = parseFloat(words[i]);
       if (!isNaN(isNumber)) {
         sum += isNumber;
       }
