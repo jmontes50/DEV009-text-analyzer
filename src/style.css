@@ -1,0 +1,7 @@
+ul li:nth-child(1){
+    color: red;
+}
+
+ul li:nth-child(2){
+    color: green;
+}
