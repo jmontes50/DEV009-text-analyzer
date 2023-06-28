@@ -1,8 +1,16 @@
 const analyzer = {
   getWordCount: (text) => {
     //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
-    // console.log("words", text.split(" ").length);
-    return text.split(" ").length;
+    let count = 0;
+    const characters = /[.,;:"«»\\[\]{}\\(\\)¿?¡!\\-]/g;
+    text = text.replace(characters, "");
+    const words = text.split(" ");
+    for(let i = 0; i < words.length; i++) {
+      if(words[i] !== "") {
+        count++;
+      }
+    }
+    return count;
   },
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
@@ -11,6 +19,8 @@ const analyzer = {
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     let textWithoutSpaces = "";
+    const characters = /[;:"«»\\[\]{}\\(\\)¿?¡!\\-]/g;
+    text = text.replace(characters, "");
     for (let i = 0; i < text.length; i++) {
       if (text[i] !== " " && text[i] !== "." && text[i] !== ",") {
         textWithoutSpaces += text[i];
@@ -21,6 +31,8 @@ const analyzer = {
   },
   getAverageWordLength: (text) => {
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+    const characters = /[;:"«»\\[\]{}\\(\\)¿?¡!\\-]/g;
+    text = text.replace(characters, "");
     const words = text.split(" ");
     const cantWords = words.length;
     const sumLength = words.reduce((acc, word) => {
@@ -33,12 +45,13 @@ const analyzer = {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
     // const numbers = text.match(/\d/g);
     // console.log({numbers});
-
+    text = text.trim();
+    if(text === "") return 0;
     const words = text.split(" ");
     const arrNumbers = [];
     // let arrNumbers = "";
     for (let i = 0; i < words.length; i++) {
-      const isNumber = parseFloat(words[i]);
+      const isNumber = parseFloat(words[i] * 1);
       if (!isNaN(isNumber)) {
         arrNumbers.push(words[i]);
         // arrNumbers += words[i];
@@ -63,7 +76,7 @@ const analyzer = {
     let sum = 0;
 
     for (let i = 0; i < words.length; i++) {
-      const isNumber = parseFloat(words[i]);
+      const isNumber = parseFloat(words[i] * 1);
       if (!isNaN(isNumber)) {
         sum += isNumber;
       }

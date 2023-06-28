@@ -51,7 +51,7 @@ describe('analyzer', () => {
     it('debería retornar 0 para "' + TEST_TEXT_NO_NUMBERS + '"', () => {
       expect(analyzer.getNumberSum(TEST_TEXT_NO_NUMBERS)).toBe(0);
     });
-    
+
     it('debería retornar 0 para "' + TEST_TEXT_NOT_A_NUMBER + '"', () => {
       expect(analyzer.getNumberSum(TEST_TEXT_NOT_A_NUMBER)).toBe(0);
     });
@@ -62,13 +62,14 @@ describe('analyzer', () => {
 
     it('debería retornar 10 para "' + TEST_TEXT_NUMBERS + '"', () => {
       expect(analyzer.getNumberSum(TEST_TEXT_NUMBERS)).toBe(10);
-    });    
+    });
   });
 
-});  
+});
 
 //TODO: eliminar .skip para que se ejecute el test de las funcionalidades opcionales
-describe.skip('Opcional:', () => {
+// describe.skip('Opcional:', () => {
+describe('Opcional:', () => {
   const TEST_TEST_EMPTY = '';
   const TEST_TEST_SPACES = '       ';
   const TEST_TEXT_PUNCTUATION_MARKS = '.,;:"«»[]{}()¿?¡!-';
@@ -77,7 +78,7 @@ describe.skip('Opcional:', () => {
     it('debería retornar 0 para "' + TEST_TEST_EMPTY + '"', () => {
       expect(analyzer.getWordCount(TEST_TEST_EMPTY)).toBe(0);
     });
-    
+
     it('debería retornar 0 para "' + TEST_TEST_SPACES + '"', () => {
       expect(analyzer.getWordCount(TEST_TEST_SPACES)).toBe(0);
     });
@@ -91,14 +92,14 @@ describe.skip('Opcional:', () => {
     it('debería retornar 0 para "' + TEST_TEST_EMPTY + '"', () => {
       expect(analyzer.getCharacterCount(TEST_TEST_EMPTY)).toBe(0);
     });
-    
+
     it('debería retornar 7 para "' + TEST_TEST_SPACES + '"', () => {
       expect(analyzer.getCharacterCount(TEST_TEST_SPACES)).toBe(7);
     });
 
     it('debería retornar 18 para "' + TEST_TEXT_PUNCTUATION_MARKS + '"', () => {
       expect(analyzer.getCharacterCount(TEST_TEXT_PUNCTUATION_MARKS)).toBe(18);
-    });    
+    });
   });
 
   describe('analyzer.getCharacterCountExcludingSpaces', () => {
@@ -112,7 +113,7 @@ describe.skip('Opcional:', () => {
 
     it('debería retornar 0 para "' + TEST_TEXT_PUNCTUATION_MARKS + '"', () => {
       expect(analyzer.getCharacterCountExcludingSpaces(TEST_TEXT_PUNCTUATION_MARKS)).toBe(0);
-    });     
+    });
   });
 
   describe('analyzer.getAverageWordLength', () => {
@@ -126,14 +127,14 @@ describe.skip('Opcional:', () => {
 
     it('debería retornar 0 para "' + TEST_TEXT_PUNCTUATION_MARKS + '"', () => {
       expect(analyzer.getAverageWordLength(TEST_TEXT_PUNCTUATION_MARKS)).toBe(0);
-    });    
+    });
   });
 
   describe('analyzer.getNumberCount', () => {
     it('debería retornar 0 para "' + TEST_TEST_EMPTY + '"', () => {
       expect(analyzer.getNumberCount(TEST_TEST_EMPTY)).toBe(0);
     });
-    
+
     it('debería retornar 0 para "' + TEST_TEST_SPACES + '"', () => {
       expect(analyzer.getNumberCount(TEST_TEST_SPACES)).toBe(0);
     });
@@ -143,7 +144,7 @@ describe.skip('Opcional:', () => {
     it('debería retornar 0 para "' + TEST_TEST_EMPTY + '"', () => {
       expect(analyzer.getNumberSum(TEST_TEST_EMPTY)).toBe(0);
     });
-    
+
     it('debería retornar 0 para "' + TEST_TEST_SPACES + '"', () => {
       expect(analyzer.getNumberSum(TEST_TEST_SPACES)).toBe(0);
     });
